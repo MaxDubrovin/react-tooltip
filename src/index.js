@@ -112,7 +112,7 @@ class ReactTooltip extends Component {
   }
 
   componentDidUpdate () {
-    this.updatePosition()
+    this.state.currentEvent && this.updatePosition()
   }
 
   componentWillReceiveProps (props) {
