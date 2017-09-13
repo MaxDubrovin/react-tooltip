@@ -47,7 +47,8 @@ class ReactTooltip extends Component {
     onClickOutside: PropTypes.func,
     scrollHide: PropTypes.bool,
     resizeHide: PropTypes.bool,
-    className: PropTypes.string
+    className: PropTypes.string,
+    show: PropTypes.bool
   };
 
   static defaultProps = {
@@ -60,7 +61,7 @@ class ReactTooltip extends Component {
       place: 'top', // Direction of tooltip
       type: 'dark', // Color theme of tooltip
       effect: 'float', // float or fixed
-      show: false,
+      show: props.show,
       border: false,
       offset: {},
       className: props.className,
