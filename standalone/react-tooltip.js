@@ -377,7 +377,7 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
       place: 'top', // Direction of tooltip
       type: 'dark', // Color theme of tooltip
       effect: 'float', // float or fixed
-      show: props.show,
+      show: false,
       border: false,
       offset: {},
       className: props.className,
@@ -897,8 +897,7 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
   onClickOutside: _react.PropTypes.func,
   scrollHide: _react.PropTypes.bool,
   resizeHide: _react.PropTypes.bool,
-  className: _react.PropTypes.string,
-  show: _react.PropTypes.bool
+  className: _react.PropTypes.string
 }, _class2.defaultProps = {
   resizeHide: true
 }, _temp)) || _class) || _class) || _class) || _class;
