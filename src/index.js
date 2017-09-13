@@ -62,7 +62,7 @@ class ReactTooltip extends Component {
       show: false,
       border: false,
       offset: {},
-      extraClass: '',
+      className: '',
       html: false,
       delayHide: 0,
       delayShow: 0,
@@ -282,7 +282,7 @@ class ReactTooltip extends Component {
       border: e.currentTarget.getAttribute('data-border')
         ? e.currentTarget.getAttribute('data-border') === 'true'
         : (this.props.border || false),
-      extraClass: e.currentTarget.getAttribute('data-class') || this.props.class || '',
+      className: e.currentTarget.getAttribute('data-class') || this.props.class || '',
       disable: e.currentTarget.getAttribute('data-tip-disable')
         ? e.currentTarget.getAttribute('data-tip-disable') === 'true'
         : (this.props.disable || false)
@@ -436,7 +436,7 @@ class ReactTooltip extends Component {
   }
 
   render () {
-    const {extraClass, html, ariaProps, disable} = this.state
+    const {className, html, ariaProps, disable} = this.state
     const placeholder = this.getTooltipContent()
     const isEmptyTip = this.isEmptyTip(placeholder)
     let tooltipClass = classname(
@@ -457,14 +457,14 @@ class ReactTooltip extends Component {
     )
     if (html) {
       return (
-        <div className={`${tooltipClass} ${extraClass}`}
+        <div className={`${tooltipClass} ${className}`}
           {...ariaProps}
           data-id='tooltip'
           dangerouslySetInnerHTML={{__html: placeholder}}></div>
       )
     } else {
       return (
-        <div className={`${tooltipClass} ${extraClass}`}
+        <div className={`${tooltipClass} ${className}`}
           {...ariaProps}
           data-id='tooltip'>{placeholder}</div>
       )
