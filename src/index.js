@@ -111,6 +111,10 @@ class ReactTooltip extends Component {
     this.bindWindowEvents(this.props.resizeHide) // Bind global event for static method
   }
 
+  componentDidUpdate () {
+    this.updatePosition()
+  }
+
   componentWillReceiveProps (props) {
     if (!props.frozen && this.props.frozen) {
       this.state.afterUnfreeze()
@@ -283,7 +287,7 @@ class ReactTooltip extends Component {
       border: e.currentTarget.getAttribute('data-border')
         ? e.currentTarget.getAttribute('data-border') === 'true'
         : (this.props.border || false),
-      className: e.currentTarget.getAttribute('data-class') || this.props.class || '',
+      className: e.currentTarget.getAttribute('data-class') || this.props.className || '',
       disable: e.currentTarget.getAttribute('data-tip-disable')
         ? e.currentTarget.getAttribute('data-tip-disable') === 'true'
         : (this.props.disable || false)

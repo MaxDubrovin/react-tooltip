@@ -426,6 +426,11 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
       this.bindWindowEvents(this.props.resizeHide); // Bind global event for static method
     }
   }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      this.updatePosition();
+    }
+  }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(props) {
       if (!props.frozen && this.props.frozen) {
@@ -637,7 +642,7 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
         delayShow: e.currentTarget.getAttribute('data-delay-show') || this.props.delayShow || 0,
         delayHide: e.currentTarget.getAttribute('data-delay-hide') || this.props.delayHide || 0,
         border: e.currentTarget.getAttribute('data-border') ? e.currentTarget.getAttribute('data-border') === 'true' : this.props.border || false,
-        className: e.currentTarget.getAttribute('data-class') || this.props.class || '',
+        className: e.currentTarget.getAttribute('data-class') || this.props.className || '',
         disable: e.currentTarget.getAttribute('data-tip-disable') ? e.currentTarget.getAttribute('data-tip-disable') === 'true' : this.props.disable || false
       }, function () {
         if (scrollHide) _this5.addScrollListener(e);
