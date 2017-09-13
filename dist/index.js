@@ -80,7 +80,7 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
       show: false,
       border: false,
       offset: {},
-      className: '',
+      className: props.className,
       html: false,
       delayHide: 0,
       delayShow: 0,
@@ -591,7 +591,8 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
   frozen: _react.PropTypes.bool,
   onClickOutside: _react.PropTypes.func,
   scrollHide: _react.PropTypes.bool,
-  resizeHide: _react.PropTypes.bool
+  resizeHide: _react.PropTypes.bool,
+  className: _react.PropTypes.string
 }, _class2.defaultProps = {
   resizeHide: true
 }, _temp)) || _class) || _class) || _class) || _class;

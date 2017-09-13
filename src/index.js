@@ -46,7 +46,8 @@ class ReactTooltip extends Component {
     frozen: PropTypes.bool,
     onClickOutside: PropTypes.func,
     scrollHide: PropTypes.bool,
-    resizeHide: PropTypes.bool
+    resizeHide: PropTypes.bool,
+    className: PropTypes.string
   };
 
   static defaultProps = {
@@ -62,7 +63,7 @@ class ReactTooltip extends Component {
       show: false,
       border: false,
       offset: {},
-      className: '',
+      className: props.className,
       html: false,
       delayHide: 0,
       delayShow: 0,
