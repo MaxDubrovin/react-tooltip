@@ -48,7 +48,8 @@ class ReactTooltip extends Component {
     scrollHide: PropTypes.bool,
     resizeHide: PropTypes.bool,
     className: PropTypes.string,
-    show: PropTypes.bool
+    show: PropTypes.bool,
+    currentTarget: PropTypes.any
   };
 
   static defaultProps = {
@@ -58,7 +59,7 @@ class ReactTooltip extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      place: 'top', // Direction of tooltip
+      place: props.place, // Direction of tooltip
       type: 'dark', // Color theme of tooltip
       effect: 'float', // float or fixed
       show: props.show,
@@ -71,7 +72,7 @@ class ReactTooltip extends Component {
       event: props.event || null,
       eventOff: props.eventOff || null,
       currentEvent: null, // Current mouse event
-      currentTarget: null, // Current target of mouse event
+      currentTarget: props.currentTarget, // Current target of mouse event
       ariaProps: parseAria(props), // aria- and role attributes
       afterUnfreeze: () => {},
       disable: false,
@@ -113,7 +114,7 @@ class ReactTooltip extends Component {
   }
 
   componentDidUpdate () {
-    this.state.currentEvent && this.updatePosition()
+    this.updatePosition()
   }
 
   componentWillReceiveProps (props) {

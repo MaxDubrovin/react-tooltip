@@ -74,7 +74,7 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
     var _this = _possibleConstructorReturn(this, (ReactTooltip.__proto__ || Object.getPrototypeOf(ReactTooltip)).call(this, props));
 
     _this.state = {
-      place: 'top', // Direction of tooltip
+      place: props.place, // Direction of tooltip
       type: 'dark', // Color theme of tooltip
       effect: 'float', // float or fixed
       show: props.show,
@@ -87,7 +87,7 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
       event: props.event || null,
       eventOff: props.eventOff || null,
       currentEvent: null, // Current mouse event
-      currentTarget: null, // Current target of mouse event
+      currentTarget: props.currentTarget, // Current target of mouse event
       ariaProps: (0, _aria.parseAria)(props), // aria- and role attributes
       afterUnfreeze: function afterUnfreeze() {},
       disable: false,
@@ -128,7 +128,7 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
-      this.state.currentEvent && this.updatePosition();
+      this.updatePosition();
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -598,7 +598,8 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
   scrollHide: _react.PropTypes.bool,
   resizeHide: _react.PropTypes.bool,
   className: _react.PropTypes.string,
-  show: _react.PropTypes.bool
+  show: _react.PropTypes.bool,
+  currentTarget: _react.PropTypes.any
 }, _class2.defaultProps = {
   resizeHide: true
 }, _temp)) || _class) || _class) || _class) || _class;
