@@ -428,7 +428,7 @@ var ReactTooltip = (0, _staticMethods2.default)(_class = (0, _windowListener2.de
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
-      this.updatePosition();
+      this.state.currentEvent && this.updatePosition();
     }
   }, {
     key: 'componentWillReceiveProps',
